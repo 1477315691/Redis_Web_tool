@@ -24,10 +24,10 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build redis.webapi/Redis.WebApi.csproj --configuration Release
+        run: dotnet build redis.webapi/redis.WebAPi.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish redis.webapi/Redis.WebApi.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish redis.webapi/redis.WebAPi.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -64,4 +64,5 @@ jobs:
           package: .
 
           
+
 
