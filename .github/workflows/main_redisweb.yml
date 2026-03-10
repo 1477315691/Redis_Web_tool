@@ -45,12 +45,10 @@ jobs:
         with:
           name: net-app       # 和上传一致
       
-      - name: Login to Azure
+      - name: Login to Azure using Managed Identity
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_DD09B72B16BE4B53AE4985304D44E373 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CF7DDD72CDDA45A796665919231C4CA8 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_07EE31D4608F484F9EE1B6A5B9558335 }}
+          identity: true
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -59,3 +57,4 @@ jobs:
           app-name: 'RedisWeb'
           slot-name: 'Production'
           package: ./myapp   # 指向下载下来的 artifact
+
