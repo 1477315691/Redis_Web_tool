@@ -48,7 +48,7 @@ jobs:
       - name: Login to Azure using Managed Identity
         uses: azure/login@v2
         with:
-          identity: true
+          auth-type: managedidentity
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -57,4 +57,5 @@ jobs:
           app-name: 'RedisWeb'
           slot-name: 'Production'
           package: ./myapp   # 指向下载下来的 artifact
+
 
