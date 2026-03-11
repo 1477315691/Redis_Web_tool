@@ -50,6 +50,7 @@ jobs:
         with:
           auth-type: IDENTITY
           subscription-id: 1e57c478-0901-4c02-8d35-49db234b78d2
+          client-id: 7eddef0c-83a2-48bc-8d5c-fa305f3992ee
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -58,6 +59,7 @@ jobs:
           app-name: 'RedisWeb'
           slot-name: 'Production'
           package: ./myapp   # 指向下载下来的 artifact
+
 
 
 
